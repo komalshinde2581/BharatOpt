@@ -1,0 +1,33 @@
+{
+  "name": "Infeasible_Demo_Model",
+  "engine": "LP_SIMPLEX",
+  "type": "LP",
+  "description": "Demo for handling infeasible scenarios (e.g. conflicting constraints where demand exceeds capacity).",
+  "objective": {
+    "sense": "max",
+    "terms": {
+      "Product_A": 10.0,
+      "Product_B": 15.0
+    }
+  },
+  "constraints": [
+    {
+      "name": "Max_Capacity",
+      "rel": "<=",
+      "rhs": 100.0,
+      "terms": {
+        "Product_A": 1.0,
+        "Product_B": 1.0
+      }
+    },
+    {
+      "name": "Min_Demand",
+      "rel": ">=",
+      "rhs": 150.0,
+      "terms": {
+        "Product_A": 1.0,
+        "Product_B": 1.0
+      }
+    }
+  ]
+}

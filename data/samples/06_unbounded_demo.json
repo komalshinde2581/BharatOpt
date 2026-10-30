@@ -1,0 +1,24 @@
+{
+  "name": "Unbounded_Demo_Model",
+  "engine": "LP_SIMPLEX",
+  "type": "LP",
+  "description": "Demo for handling unbounded scenarios (e.g. missing capacity limits leading to infinite profit).",
+  "objective": {
+    "sense": "max",
+    "terms": {
+      "Product_X": 50.0,
+      "Product_Y": 40.0
+    }
+  },
+  "constraints": [
+    {
+      "name": "Min_Production_Req",
+      "rel": ">=",
+      "rhs": 10.0,
+      "terms": {
+        "Product_X": 1.0,
+        "Product_Y": 1.0
+      }
+    }
+  ]
+}

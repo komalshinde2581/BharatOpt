@@ -1,0 +1,104 @@
+{
+  "name": "MRPL_Refinery_Optimization",
+  "engine": "LP_SIMPLEX",
+  "type": "LP",
+  "description": "Mangalore Refinery (MRPL) operations: crude selection, CDU capacity, desulfurization, and final product blending to meet demand and specifications.",
+  "objective": {
+    "sense": "max",
+    "terms": {
+      "Sale_Petrol": 110.0,
+      "Sale_Diesel": 125.0,
+      "Sale_ATF": 135.0,
+      "Buy_ArabLight": -75.0,
+      "Buy_BasrahHeavy": -65.0,
+      "Buy_BombayHigh": -82.0
+    }
+  },
+  "constraints": [
+    {
+      "name": "CDU_Capacity_Limit",
+      "rel": "<=",
+      "rhs": 300000.0,
+      "terms": {
+        "Buy_ArabLight": 1.0,
+        "Buy_BasrahHeavy": 1.0,
+        "Buy_BombayHigh": 1.0
+      }
+    },
+    {
+      "name": "Desulfurization_Capacity",
+      "rel": "<=",
+      "rhs": 80000.0,
+      "terms": {
+        "Buy_ArabLight": 0.2,
+        "Buy_BasrahHeavy": 0.6,
+        "Buy_BombayHigh": 0.05
+      }
+    },
+    {
+      "name": "Petrol_Yield_Balance",
+      "rel": "<=",
+      "rhs": 0.0,
+      "terms": {
+        "Sale_Petrol": 1.0,
+        "Buy_ArabLight": -0.25,
+        "Buy_BasrahHeavy": -0.15,
+        "Buy_BombayHigh": -0.35
+      }
+    },
+    {
+      "name": "Diesel_Yield_Balance",
+      "rel": "<=",
+      "rhs": 0.0,
+      "terms": {
+        "Sale_Diesel": 1.0,
+        "Buy_ArabLight": -0.45,
+        "Buy_BasrahHeavy": -0.50,
+        "Buy_BombayHigh": -0.40
+      }
+    },
+    {
+      "name": "ATF_Yield_Balance",
+      "rel": "<=",
+      "rhs": 0.0,
+      "terms": {
+        "Sale_ATF": 1.0,
+        "Buy_ArabLight": -0.15,
+        "Buy_BasrahHeavy": -0.10,
+        "Buy_BombayHigh": -0.20
+      }
+    },
+    {
+      "name": "Min_Diesel_Demand",
+      "rel": ">=",
+      "rhs": 120000.0,
+      "terms": {
+        "Sale_Diesel": 1.0
+      }
+    },
+    {
+      "name": "Min_ATF_Demand",
+      "rel": ">=",
+      "rhs": 30000.0,
+      "terms": {
+        "Sale_ATF": 1.0
+      }
+    },
+    {
+      "name": "Max_ArabLight_Shipment",
+      "rel": "<=",
+      "rhs": 150000.0,
+      "terms": {
+        "Buy_ArabLight": 1.0
+      }
+    },
+    {
+      "name": "Max_BombayHigh_Shipment",
+      "rel": "<=",
+      "rhs": 100000.0,
+      "terms": {
+        "Buy_BombayHigh": 1.0
+      }
+    }
+  ]
+}

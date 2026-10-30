@@ -1,0 +1,22 @@
+{
+  "name": "Malformed_Demo_Model",
+  "engine": "LP_SIMPLEX",
+  "type": "LP",
+  "description": "Demo for handling malformed input structure.",
+  "objective": {
+    "sense": "max",
+    "terms": {
+      "Product_X": "fifty", 
+      "Product_Y": 40.0
+    }
+  },
+  "constraints": [
+    {
+      "name": "Missing_Rel_Operator",
+      "rhs": "not_a_number",
+      "terms": {
+        "Product_X": 1.0
+      }
+    }
+  ]
+}

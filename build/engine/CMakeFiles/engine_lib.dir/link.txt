@@ -1,0 +1,2 @@
+/usr/bin/ar qc libengine_lib.a CMakeFiles/engine_lib.dir/src/engine.cpp.o CMakeFiles/engine_lib.dir/lp/lp_solver.cpp.o CMakeFiles/engine_lib.dir/presolve/presolve.cpp.o CMakeFiles/engine_lib.dir/milp/branch_and_bound.cpp.o CMakeFiles/engine_lib.dir/milp/branching.cpp.o
+/usr/bin/ranlib libengine_lib.a

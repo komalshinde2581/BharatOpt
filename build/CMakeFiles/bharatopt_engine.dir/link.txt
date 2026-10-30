@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/bharatopt_engine.dir/engine/main.cpp.o -o bharatopt_engine  engine/libengine_lib.a

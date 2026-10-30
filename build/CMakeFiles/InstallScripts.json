@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/shreyas/Desktop/BharatOpt-X/build/cmake_install.cmake",
+		"/Users/shreyas/Desktop/BharatOpt-X/build/engine/cmake_install.cmake",
+		"/Users/shreyas/Desktop/BharatOpt-X/build/tests/cmake_install.cmake",
+		"/Users/shreyas/Desktop/BharatOpt-X/build/_deps/googletest-build/cmake_install.cmake",
+		"/Users/shreyas/Desktop/BharatOpt-X/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"/Users/shreyas/Desktop/BharatOpt-X/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
